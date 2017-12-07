@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.android.fragments;
+package com.ssdd.myapplication;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -61,8 +61,14 @@ public class ArticleFragment extends Fragment {
 
     public void updateArticleView(int position) {
         TextView article = (TextView) getActivity().findViewById(R.id.article);
-        article.setText(Ipsum.Articles[position]);
-        mCurrentPosition = position;
+
+        //TODO Need Fix
+        if (article != null)
+        {
+            article.setText(Ipsum.Articles[position]);
+
+            mCurrentPosition = position;
+        }
     }
 
     @Override
