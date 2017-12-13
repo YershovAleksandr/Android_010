@@ -17,6 +17,7 @@ package com.ssdd.myapplication;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,10 @@ import android.widget.TextView;
 public class ArticleFragment extends Fragment {
     final static String ARG_POSITION = "position";
     int mCurrentPosition = -1;
+
+    View view;
+
+    private static final String TAG = "X42";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -38,7 +43,7 @@ public class ArticleFragment extends Fragment {
         }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.article_view, container, false);
+        return view = inflater.inflate(R.layout.article_view, container, false);
     }
 
     @Override
@@ -60,7 +65,16 @@ public class ArticleFragment extends Fragment {
     }
 
     public void updateArticleView(int position) {
+        //TextView article = (TextView) getActivity().findViewById(R.id.article);
+        //TextView article = (TextView) view.findViewById(R.id.article);
+        //TextView article = (TextView) view.findViewById(R.id.article);
         TextView article = (TextView) getActivity().findViewById(R.id.article);
+
+        Log.i(TAG, "wtf");
+        Log.i(TAG, "View = " + view.toString());
+        Log.i(TAG, "getActivity = " + getActivity().toString());
+        Log.i(TAG, "findViewById(R.id.article) = " + getActivity().findViewById(R.id.article));
+        //Log.i(TAG, "article = " + article.t);
 
         //TODO Need Fix
         if (article != null)
